@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import { useNavigate } from "react-router-dom";
-import { Alert, Button } from "reactstrap";
+import { Alert, Button, Form } from "reactstrap";
 
 // Login Component 
 // Get user data and allow react to control the form data
@@ -43,7 +43,7 @@ function Login({login}) {
         <div className="card-body mb-2">
           <h1 className="card-title text-center mb-2">Log In</h1>
           <p className="card-text text-center mb-2"></p>      
-          <form onSubmit={handleSubmit}>
+          <Form onSubmit={handleSubmit}>
             <label for="username">Username</label>
             <input 
               required
@@ -74,7 +74,7 @@ function Login({login}) {
             <Button color="primary" type="submit">
               Log in!
             </Button>
-          </form>
+          </Form>
         </div>
       </div>  
     </div>            
