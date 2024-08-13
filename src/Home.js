@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import UserContext from "./UserContext";
-import { Button } from "reactstrap";
+import { Link } from "react-router-dom";
 
 // Home Component
 // Welcome a returning user or
@@ -25,8 +25,8 @@ function Home() {
 
           {!currentUser &&
           <div className="text-center">
-            <a className="btn btn-primary mb-3" href="/login">Log in</a>{' '}
-            <a className="btn btn-primary mb-3" href="/signup">Sign up</a>    
+            <Link className="btn btn-primary mb-3" href="/login">Log in</Link>{' '}
+            <Link className="btn btn-primary mb-3" href="/signup">Sign up</Link>    
           </div>
         }          
         </div>     
