@@ -48,7 +48,42 @@ function Profile({updateProfile}) {
 
   return (
     <div className="mainContainer">
-      <Card border="info" style={{width: '30rem'}} className="mb-3">
+      <div className="card border-info mb-2" style={{width: '20rem'}}>
+        <div className="card-body mb-2">
+          <h1 className="card-title text-center mb-2">{currentUser.username}</h1>
+          <p className="card-text text-center mb-2"></p>   
+            <Form onSubmit={handleSubmit}>
+              <label for="firstName">First Name</label>
+              <input 
+                required
+                className="form-control mb-2"
+                id="firstName"
+                type="text"
+                placeholder="First Name"
+                value={formData.firstName}
+                onChange={handleChange}
+              />      
+              <label for="lastName">Last Name</label>
+              <input 
+                required
+                className="form-control mb-2"
+                id="lastName"
+                type="text"
+                placeholder="Last Name"
+                value={formData.lastName}
+                onChange={handleChange}
+              />        
+              <label for="email">Email</label>
+              <input 
+                required
+                className="form-control mb-2"
+                id="email"
+                type="email"
+                placeholder="Email"
+                value={formData.email}
+                onChange={handleChange}
+              />                                          
+{/*       <Card border="info" style={{width: '30rem'}} className="mb-3">
         <Card.Title>{currentUser.username}</Card.Title>
         <Card.Body>
           <Form onSubmit={handleSubmit}>
@@ -63,8 +98,8 @@ function Profile({updateProfile}) {
                   value={formData.firstName}
                   onChange={handleChange}
                 />
-            </Form.Group>      
-            <Form.Group className="mb-3" controlId="lastName">
+            </Form.Group>    */}   
+{/*             <Form.Group className="mb-3" controlId="lastName">
               <Form.Label>
                 Last Name
               </Form.Label>
@@ -75,8 +110,8 @@ function Profile({updateProfile}) {
                   value={formData.lastName}
                   onChange={handleChange}
                 />
-            </Form.Group>  
-            <Form.Group className="mb-3" controlId="email">
+            </Form.Group>   */}
+{/*             <Form.Group className="mb-3" controlId="email">
               <Form.Label>
                 Email
               </Form.Label>
@@ -87,7 +122,7 @@ function Profile({updateProfile}) {
                   value={formData.email}
                   onChange={handleChange}
                 />
-            </Form.Group>                                            
+            </Form.Group>   */}                                          
             {updated && 
             <Alert key="updated" variant="success">
               Profile Updated!
@@ -99,8 +134,10 @@ function Profile({updateProfile}) {
               Update Profile
             </Button>
           </Form> 
-        </Card.Body>
-      </Card>
+        </div>
+      </div>
+{/*         </Card.Body>
+      </Card> */}
     </div>
   )
 }

@@ -40,11 +40,37 @@ function Login({login}) {
 
   return (
     <div className="mainContainer">
-      <Card border="info" style={{ width: '40rem'}} className="mb-3">
-        <Card.Title>Log In</Card.Title>
-        <Card.Body>        
+      <div className="card border-info mb-2" style={{width: '20rem'}}>
+        <div className="card-body mb-2">
+          <h1 className="card-title text-center mb-2">Log In</h1>
+          <p className="card-text text-center mb-2"></p>      
+{/*       <Card border="info" style={{ width: '40rem'}} className="mb-3"> */}
+{/*         <Card.Title>Log In</Card.Title> */}
+{/*         <Card.Body>         */}
           <Form onSubmit={handleSubmit}>
-            <Form.Group as={Row} controlId="username" className="mb-3">
+            <label for="username">Username</label>
+            <input 
+              required
+              className="form-control mb-2"
+              id="username"
+              type="text"
+              placeholder="Username"
+              value={formData.username}
+              onChange={handleChange}
+            />
+            <label for="password">Password</label>
+            <input 
+              required
+              className="form-control mb-2"
+              id="password"
+              type="password"
+              placeholder="Username"
+              autoComplete="on"
+              value={formData.password}
+              onChange={handleChange}
+            />            
+
+{/*             <Form.Group as={Row} controlId="username" className="mb-3">
               <Form.Label column>
                 Username
               </Form.Label>
@@ -57,8 +83,8 @@ function Login({login}) {
                   onChange={handleChange}
                 />
               </Col>
-            </Form.Group>
-            <Form.Group as={Row} controlId="password" className="mb-3">
+            </Form.Group> */}
+{/*             <Form.Group as={Row} controlId="password" className="mb-3">
               <Form.Label column>
                 Password
               </Form.Label>
@@ -72,7 +98,7 @@ function Login({login}) {
                   onChange={handleChange}
                 />
               </Col>
-            </Form.Group>             
+            </Form.Group> */}             
             {loginErr && 
              <Alert key={"err"} variant="danger">{loginErr}</Alert>
             }
@@ -80,8 +106,8 @@ function Login({login}) {
               Log in!
             </Button>
           </Form>
-        </Card.Body>          
-      </Card>
+        </div>
+      </div>  
     </div>            
   )
 }
