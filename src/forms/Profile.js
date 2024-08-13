@@ -1,6 +1,6 @@
 import React, {useState, useContext} from "react";
 import UserContext from "../UserContext";
-import { Form, Button, Card, Alert } from "react-bootstrap";
+import { Alert, Button } from "reactstrap";
 
 // Profile component
 // List the user data
@@ -9,7 +9,6 @@ import { Form, Button, Card, Alert } from "react-bootstrap";
 //    lastName
 //    email
 // User can change everything but username
-// This uses react bootstrap forms for data capture and validation
 // let react control the form for validation
 // Call updateProfile and pass to parent
 
@@ -52,7 +51,7 @@ function Profile({updateProfile}) {
         <div className="card-body mb-2">
           <h1 className="card-title text-center mb-2">{currentUser.username}</h1>
           <p className="card-text text-center mb-2"></p>   
-            <Form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
               <label for="firstName">First Name</label>
               <input 
                 required
@@ -82,62 +81,24 @@ function Profile({updateProfile}) {
                 placeholder="Email"
                 value={formData.email}
                 onChange={handleChange}
-              />                                          
-{/*       <Card border="info" style={{width: '30rem'}} className="mb-3">
-        <Card.Title>{currentUser.username}</Card.Title>
-        <Card.Body>
-          <Form onSubmit={handleSubmit}>
-            <Form.Group className="mb-3" controlId="firstName">
-              <Form.Label>
-                First Name
-              </Form.Label>
-                <Form.Control 
-                  required
-                  type="text" 
-                  placeholder="First Name"
-                  value={formData.firstName}
-                  onChange={handleChange}
-                />
-            </Form.Group>    */}   
-{/*             <Form.Group className="mb-3" controlId="lastName">
-              <Form.Label>
-                Last Name
-              </Form.Label>
-                <Form.Control 
-                  required
-                  type="text" 
-                  placeholder="Last Name"
-                  value={formData.lastName}
-                  onChange={handleChange}
-                />
-            </Form.Group>   */}
-{/*             <Form.Group className="mb-3" controlId="email">
-              <Form.Label>
-                Email
-              </Form.Label>
-                <Form.Control 
-                  required
-                  type="email" 
-                  placeholder="Email"
-                  value={formData.email}
-                  onChange={handleChange}
-                />
-            </Form.Group>   */}                                          
-            {updated && 
-            <Alert key="updated" variant="success">
-              Profile Updated!
-            </Alert>}  
-            {errMsg && 
-             <Alert key={"err"} variant="danger">API Error: {errMsg}</Alert>
+              />                                                                                 
+            {
+              updated && 
+                <Alert color="success">
+                  Profile Updated!
+                </Alert>}  
+            {
+              errMsg && 
+                <Alert color="danger">
+                  API Error: {errMsg}
+                </Alert>
             }                        
-            <Button type="submit">
+            <Button type="submit" color="primary">
               Update Profile
             </Button>
-          </Form> 
+          </form> 
         </div>
       </div>
-{/*         </Card.Body>
-      </Card> */}
     </div>
   )
 }

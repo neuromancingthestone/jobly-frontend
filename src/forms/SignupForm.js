@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { Form, Row, Col, Button, Card, Alert } from "react-bootstrap";
+import { Alert, Button } from "reactstrap";
 import { useNavigate } from "react-router-dom";
 
 // Signup Form Component
@@ -12,7 +12,6 @@ import { useNavigate } from "react-router-dom";
 //    email
 //
 // react controls input for validation
-// uses react bootstrap for form handling
 // On submit, call handleSubmit and pass form
 // data to parent.
 
@@ -52,89 +51,73 @@ const SignupForm = ({signup}) => {
 
   return (
     <div className="mainContainer">
-      <Card border="info" style={{ width: '40rem'}} className="mb-2">
-        <Card.Title>Sign Up</Card.Title>
-        <Card.Body>
-          <Form onSubmit={handleSubmit}>
-            <Form.Group as={Row} className="mb-3" controlId="username">
-              <Form.Label column>
-                Username
-              </Form.Label>
-              <Col sm={9}>
-                <Form.Control 
-                  required
-                  type="text" 
-                  placeholder="Username"
-                  value={formData.username}
-                  onChange={handleChange}
-                />
-              </Col>
-            </Form.Group>
-            <Form.Group as={Row} className="mb-3" controlId="password">
-              <Form.Label column>
-                Password
-              </Form.Label>
-              <Col sm={9}>
-                <Form.Control 
-                  required
-                  type="password" 
-                  placeholder="Password"
-                  value={formData.password}
-                  onChange={handleChange}
-                />
-              </Col>
-            </Form.Group> 
-            <Form.Group as={Row} className="mb-3" controlId="firstName">
-              <Form.Label column>
-                First Name
-              </Form.Label>
-              <Col sm={9}>
-                <Form.Control 
-                  required
-                  type="text" 
-                  placeholder="First Name"
-                  value={formData.firstName}
-                  onChange={handleChange}
-                />
-              </Col>
-            </Form.Group>      
-            <Form.Group as={Row} className="mb-3" controlId="lastName">
-              <Form.Label column>
-                Last Name
-              </Form.Label>
-              <Col sm={9}>
-                <Form.Control 
-                  required
-                  type="text" 
-                  placeholder="Last Name"
-                  value={formData.lastName}
-                  onChange={handleChange}
-                />
-              </Col>
-            </Form.Group>  
-            <Form.Group as={Row} className="mb-3" controlId="email">
-              <Form.Label column>
-                Email
-              </Form.Label>
-              <Col sm={9}>
-                <Form.Control 
-                  required
-                  type="email" 
-                  placeholder="Email"
-                  value={formData.email}
-                  onChange={handleChange}
-                />
-              </Col>
-            </Form.Group>          
-            {signupErr && 
-             <Alert key={"err"} variant="danger">{signupErr}</Alert>
+      <div className="card border-info mb-2" style={{width: '20rem'}}>
+        <div className="card-body mb-2">
+          <h1 className="card-title text-center mb-2">Sign Up</h1>
+          <p className="card-text text-center mb-2"></p>   
+            <form onSubmit={handleSubmit}>
+            <label for="username">Username</label>
+              <input 
+                required
+                className="form-control mb-2"
+                id="username"
+                type="text"
+                placeholder="Username"
+                value={formData.username}
+                onChange={handleChange}
+              />        
+            <label for="password">Password</label>
+              <input 
+                required
+                className="form-control mb-2"
+                id="password"
+                type="password"
+                placeholder="Password"
+                value={formData.username}
+                onChange={handleChange}
+              />                          
+              <label for="firstName">First Name</label>
+              <input 
+                required
+                className="form-control mb-2"
+                id="firstName"
+                type="text"
+                placeholder="First Name"
+                value={formData.firstName}
+                onChange={handleChange}
+              />      
+              <label for="lastName">Last Name</label>
+              <input 
+                required
+                className="form-control mb-2"
+                id="lastName"
+                type="text"
+                placeholder="Last Name"
+                value={formData.lastName}
+                onChange={handleChange}
+              />        
+              <label for="email">Email</label>
+              <input 
+                required
+                className="form-control mb-2"
+                id="email"
+                type="email"
+                placeholder="Email"
+                value={formData.email}
+                onChange={handleChange}
+              />          
+            {
+              signupErr && 
+              <Alert color="danger">
+                {signupErr}
+              </Alert>
             }                                              
-            <Button type="submit">
+            <Button type="submit" color="primary">
               Sign Up!
             </Button>
-          </Form>
-        </Card.Body>          
-      </Card>
+          </form>
+        </div>
+      </div>
     </div>
   )
 }

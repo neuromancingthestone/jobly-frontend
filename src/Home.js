@@ -1,7 +1,6 @@
 import React, {useContext} from "react";
-import { Button } from "react-bootstrap";
-import { Stack } from "react-bootstrap";
 import UserContext from "./UserContext";
+import { Button } from "reactstrap";
 
 // Home Component
 // Welcome a returning user or
@@ -25,12 +24,10 @@ function Home() {
           }               
 
           {!currentUser &&
-          <>
-            <Stack gap={2}>
-              <Button as="a" variant="primary" href="/login">Log in</Button>
-              <Button as="a" variant="primary" href="/signup">Sign up</Button>
-            </Stack>          
-          </>
+          <div className="text-center">
+            <Button className="mb-3" color="primary" href="/login">Log in</Button>{' '}
+            <Button className="mb-3" color="primary" href="/signup">Sign up</Button>    
+          </div>
         }          
         </div>     
       </div>
