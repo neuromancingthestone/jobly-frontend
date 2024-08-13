@@ -71,9 +71,9 @@ function Login({login}) {
                 {loginErr}
               </Alert>
             }
-            <Button color="primary" type="submit">
+            <Button color="primary" type="submit" onClick={handleSubmit}>
               Log in!
-            </Button>
+            </Button>          
           </Form>
         </div>
       </div>  
