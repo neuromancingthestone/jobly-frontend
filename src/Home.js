@@ -25,8 +25,8 @@ function Home() {
 
           {!currentUser &&
           <div className="text-center">
-            <Button className="mb-3" color="primary" href="/login">Log in</Button>{' '}
-            <Button className="mb-3" color="primary" href="/signup">Sign up</Button>    
+            <a className="btn btn-primary mb-3" href="/login">Log in</a>{' '}
+            <a className="btn btn-primary mb-3" href="/signup">Sign up</a>    
           </div>
         }          
         </div>     
