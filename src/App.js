@@ -33,7 +33,7 @@ function App() {
           let user = await JoblyApi.getUserData(username);       
           setCurrentUser({data: user});    
         } catch (e) {
-          console.error(e);
+          console.error(`Login Error`, e);
         }
   // If no token found, set user to anon
       } else {
