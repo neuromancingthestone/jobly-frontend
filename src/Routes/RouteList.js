@@ -16,7 +16,8 @@ import Profile from "../forms/Profile";
 
 function RouteList({user, login, logout, signup, updateProfile}) {
   return (  
-    <Routes>        
+    <Routes>
+      {console.log(`Route List`, user)}              
       {!user && 
         <>     
           <Route path="/login" element={<Login login={login} />} />
