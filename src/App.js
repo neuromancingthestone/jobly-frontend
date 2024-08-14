@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+/* import { BrowserRouter } from "react-router-dom"; */
 import RouteList from "./Routes/RouteList";
 import JoblyApi from "./api/JoblyAPI";
 import { jwtDecode } from "jwt-decode";
@@ -101,14 +102,16 @@ function App() {
   }  
 
   return (
-    <UserContext.Provider value={{          // Allow current user to be passed to children
-        currentUser: currentUser.data,
-        submitApply}}>    
+/*     <BrowserRouter > */
+      <UserContext.Provider value={{          // Allow current user to be passed to children
+          currentUser: currentUser.data,
+          submitApply}}>    
 
-      <NavBar logout={logout}/>
-          
-      <RouteList user={currentUser.data} login={login} logout={logout} signup={signup} updateProfile={updateProfile}/>
-    </UserContext.Provider>    
+        <NavBar logout={logout}/>
+            
+        <RouteList user={currentUser.data} login={login} logout={logout} signup={signup} updateProfile={updateProfile}/>
+      </UserContext.Provider>    
+/*     </BrowserRouter> */
   )
 }
 

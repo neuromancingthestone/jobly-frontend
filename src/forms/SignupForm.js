@@ -73,7 +73,7 @@ const SignupForm = ({signup}) => {
                 id="password"
                 type="password"
                 placeholder="Password"
-                value={formData.username}
+                value={formData.password}
                 onChange={handleChange}
               />                          
               <label for="firstName">First Name</label>
