@@ -16,17 +16,16 @@ import Profile from "../forms/Profile";
 
 function RouteList({user, login, logout, signup, updateProfile}) {
   return (  
-    <Routes>
-      {console.log(`Route List`, user)}              
+    <Routes>        
       {!user && 
         <>     
           <Route path="/login" element={<Login login={login} />} />
           <Route path="/signup" element={<Signup signup={signup} />} />         
         </>     
-      }    
-      <Route path="/" element={<Home />} />  
+      }
+      <Route path="/" element={<Home />} />      
       {user && 
-        <>        
+        <>          
           <Route path="/companies" element={<Companies />} />
           <Route path="/companies/:id" element={<CompanyDetail />} />
           <Route path="/jobs" element={<Jobs />} />
@@ -35,7 +34,7 @@ function RouteList({user, login, logout, signup, updateProfile}) {
         </>
       }      
       <Route path="*" element={<Navigate to="/" />} />          
-    </Routes>   
+    </Routes>
   )
 }
 

@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from "react";
-/* import { BrowserRouter } from "react-router-dom"; */
 import RouteList from "./Routes/RouteList";
 import JoblyApi from "./api/JoblyAPI";
 import { jwtDecode } from "jwt-decode";
@@ -34,7 +33,7 @@ function App() {
           let user = await JoblyApi.getUserData(username);       
           setCurrentUser({data: user});    
         } catch (e) {
-          console.error(`Login Error`, e);
+          console.error(e);
         }
   // If no token found, set user to anon
       } else {
@@ -102,16 +101,14 @@ function App() {
   }  
 
   return (
-/*     <BrowserRouter > */
-      <UserContext.Provider value={{          // Allow current user to be passed to children
-          currentUser: currentUser.data,
-          submitApply}}>    
+    <UserContext.Provider value={{          // Allow current user to be passed to children
+        currentUser: currentUser.data,
+        submitApply}}>    
 
-        <NavBar logout={logout}/>
-            
-        <RouteList user={currentUser.data} login={login} logout={logout} signup={signup} updateProfile={updateProfile}/>
-      </UserContext.Provider>    
-/*     </BrowserRouter> */
+      <NavBar logout={logout}/>
+          
+      <RouteList user={currentUser.data} login={login} logout={logout} signup={signup} updateProfile={updateProfile}/>
+    </UserContext.Provider>    
   )
 }
 
