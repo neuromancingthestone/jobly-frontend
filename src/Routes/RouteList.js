@@ -20,13 +20,14 @@ function RouteList({user, login, logout, signup, updateProfile}) {
       {console.log(`Route List`, user)}              
       {!user && 
         <>     
+          <Route path="/" element={<Home />} />  
           <Route path="/login" element={<Login login={login} />} />
           <Route path="/signup" element={<Signup signup={signup} />} />         
         </>     
-      }
-      <Route path="/" element={<Home />} />      
+      }    
       {user && 
-        <>          
+        <>        
+          <Route path="/" element={<Home />} />    
           <Route path="/companies" element={<Companies />} />
           <Route path="/companies/:id" element={<CompanyDetail />} />
           <Route path="/jobs" element={<Jobs />} />
